@@ -24,6 +24,7 @@
 
         <form class="new-member-form">
             {{ form_start(form) }}
+            {{ form_errors(form.name) }}
             {{ form_label(form.name) }}
             <div class="form-content">
                 {{ form_widget(form.name) }}

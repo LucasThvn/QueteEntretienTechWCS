@@ -26,10 +26,9 @@ class HomeController extends AbstractController
             'method' => 'GET',
         ]);
         $form->handleRequest($request);
-
+        $errors = [];
 
         if ($form->isSubmitted() && $form->isValid()) {
-            dump($form->isValid());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($argonaut);
             $entityManager->flush();

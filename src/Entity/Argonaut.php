@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ArgonautRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ArgonautRepository::class)
@@ -18,7 +19,9 @@ class Argonaut
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
+     * @Assert\NotBlank
+     * @Assert\Length(min=2)
      */
     private $name;
 
