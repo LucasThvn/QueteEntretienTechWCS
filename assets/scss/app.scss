@@ -1,6 +1,143 @@
 @import "vars";
 
-
 body {
-    background-color: lightgray;
+    margin: 0;
+    font-family: 'Varela Round', sans-serif;
+    color: $fontColor;
+
+    h2 {
+        font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+        text-align: center;
+        position: relative;
+    }
+
+    .underline:before {
+        position: absolute;
+        bottom: -20px;
+        content: " ";
+        width: 60px;
+        height: 6px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 8px;
+        background-color: #F76C6C;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        align-items: center;
+        padding: 0 2em;
+        height: 10vh;
+        box-shadow: 0 5px 14px -1px $shadowUnder;
+
+        .logo-wcs {
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            img {
+                height: 50%;
+            }
+        }
+
+
+        h1 {
+            font-size: calc(21px + 6 * ((100vw - 320px) / 680));
+        }
+    }
+
+    main {
+        max-width: 960px;
+        margin: 0 auto;
+        min-height: calc(80vh);
+
+
+        .new-member-form {
+            margin: 3em auto 4em auto;
+            width: 70vw;
+            max-width: 600px;
+            min-width: 200px;
+
+            .form-content {
+                display: flex;
+                flex-wrap: nowrap;
+
+                input {
+                    height: 30px;
+                    width: 100%;
+                    padding: 5px 30px 5px 15px;
+                    font-family: 'Raleway', sans-serif;
+                    text-decoration: none;
+                    font-weight: 500;
+                    font-size: 18px;
+                    border-radius: 30px 0 0 30px ;
+                    box-shadow: 0 2px 20px 0 $shadowUnder;
+                    border: none;
+                    outline: none;
+                    flex: auto;
+                }
+
+                button {
+                    flex: auto;
+                    font-size: 1em;
+                    margin-left: -25px;
+                    height: 40px;
+                    padding: 5px 30px;
+                    font-family: 'Raleway', sans-serif;
+                    text-decoration: none;
+                    font-weight: 600;
+                    border: none;
+                    border-radius: 30px;
+                    background-color: $primaryColor;
+                    color: #fff;
+                    box-shadow: 0 2px 20px 0 $shadowUnder;
+                    outline: none;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #fff;
+                        color: $primaryColor;
+                        transition: all 0.3s;
+                    }
+                }
+            }
+
+            label {
+                display: block;
+                margin-bottom: 0.5em;
+            }
+        }
+
+
+        .member-list {
+            margin-top: 60px;
+            text-align: center;
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(40px, auto);
+
+            .member-item {
+                padding: 0.25em 0;
+                margin: 0 0 30px 0;
+                height: 35px;
+            }
+        }
+
+    }
+
+    footer {
+        margin-top: 2em;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        color: #fff;
+        background: $primaryColor;
+        height: 100px;
+        padding: 0.25em 0;
+    }
+
 }
