@@ -22,7 +22,7 @@
         <!-- New member form -->
         <h2 class="underline">Ajouter un(e) Argonaute</h2>
 
-        <form class="new-member-form">
+        <div class="new-member-form">
             {{ form_start(form) }}
             {{ form_errors(form.name) }}
             {{ form_label(form.name) }}
@@ -31,15 +31,15 @@
                 <button type="submit">{{ button_label|default('Recruter') }}</button>
             </div>
             {{ form_end(form) }}
-        </form>
+        </div>
 
         <!-- Member list -->
         <h2 class="underline">Membres de l'équipage</h2>
-        <section class="member-list">
+        <div class="member-list">
             {% for member in argonauts %}
                 <div class="member-item">{{ member.name }}</div>
             {% endfor %}
-        </section>
+        </div>
     </main>
 
     <footer>
